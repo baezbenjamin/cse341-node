@@ -1,7 +1,7 @@
 const mongodb = require('../db/connect');
 
 const getData = async (req, res, next) => {
-  const result = await mongodb.getDb().db('test_database').collection('db_collection').find();
+  const result = await mongodb.getDb().db('test_database').collection('test_collection').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists[0]);
